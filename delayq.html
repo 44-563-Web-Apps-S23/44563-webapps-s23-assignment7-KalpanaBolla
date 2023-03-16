@@ -95,20 +95,13 @@
         }
     }
 
-    function promote() {
-        const queueItems = document.getElementsByClassName("delayq");
-        const length = queueItems.length;
-        const random = Math.floor(Math.random() * length);
-        console.log(random);
-
-        const element = document.createElement("div");
-        element.innerHTML = queueItems[random].textContent;
-        element.style.color = "red";
-        element.classList.add("delayq");
-
-        const container = document.getElementById("target");
-        queueItems[random].remove();
-        container.insertBefore(element, queueItems[0]);
+    function promote(){
+        let len=queueItems.length;
+        let rand1=Math.floor(Math.random()*len);
+        removedItem=queueItems[rand1];
+            queueItems[rand1].remove();
+            let container = document.getElementById('target')
+	        container.insertBefore(removedItem,container.firstChild)
     }
 
 </script>
